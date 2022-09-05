@@ -1,0 +1,11 @@
+POST http://localhost:5000/api/users/signup
+content-type: application/json
+
+{
+    "name": "Rinku",
+    "username": "@rinku",
+    "password": "1234"
+}
+
+###
+GET http://localhost:5000/api/users/
