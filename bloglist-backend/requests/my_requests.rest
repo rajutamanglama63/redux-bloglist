@@ -18,3 +18,35 @@ Content-Type: application/json
 
 ###
 GET http://localhost:5000/api/users/
+
+###
+POST http://localhost:5000/api/blogs/
+Content-Type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkByYW5kYWsiLCJpZCI6IjYzMTYzOWU3NTc2NjQ3YWVhYTkxNzQ1OCIsImlhdCI6MTY2MjQ3ODUwNywiZXhwIjoxNjYyNDgyMTA3fQ.Ic57bmXy65zlLwQC_Cg67xPE6CG-Ak4B4ut8a4Xv21E
+
+{
+    "title": "Electroxsdgneering",
+    "url": "electronixghdcs.com",
+    "author": "Randak"
+}
+
+###
+DELETE http://localhost:5000/api/blogs/63176b55d8067e8893c61dc0
+Content-Type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkByYW5kYWsiLCJpZCI6IjYzMTYzOWU3NTc2NjQ3YWVhYTkxNzQ1OCIsImlhdCI6MTY2MjQ3ODUwNywiZXhwIjoxNjYyNDgyMTA3fQ.Ic57bmXy65zlLwQC_Cg67xPE6CG-Ak4B4ut8a4Xv21E
+
+
+###
+GET http://localhost:5000/api/blogs/
+
+
+###
+PUT http://localhost:5000/api/blogs/63176888fdc1963f9ac3b3cd
+Content-Type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkBkZXN5IiwiaWQiOiI2MzE2MzBjMTQ4ZWE3MGRlNzRlNDFhNjkiLCJpYXQiOjE2NjI0Nzk0MjMsImV4cCI6MTY2MjQ4MzAyM30.VD2laySQzqqHpiZGkKFegFF-M7UrL3p4SZcwVGQYuJ8
+
+{
+    "title": "wave technology",
+    "author": "Desy",
+    "url": "wave.com"
+}
