@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { userLogin } from "../reducers/loginReducer";
 
 const Login = () => {
@@ -8,6 +8,7 @@ const Login = () => {
   const [password, setPassword] = useState("");
 
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const submitHandler = async (e) => {
     e.preventDefault();
@@ -15,6 +16,9 @@ const Login = () => {
 
     try {
       dispatch(userLogin(username, password));
+      setUsername("");
+      setPassword("");
+      navigate("/blogs");
     } catch (error) {
       console.log(error);
     }

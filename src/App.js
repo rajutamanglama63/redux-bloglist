@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import Blog from "./components/Blog";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { initializeBlogs } from "./reducers/blogReducer";
 import Login from "./components/Login";
 import Users from "./components/Users";
@@ -12,6 +12,7 @@ import Signup from "./components/Signup";
 
 const App = () => {
   const dispatch = useDispatch();
+  const loggedUser = useSelector((state) => state.loggedUser);
 
   useEffect(() => {
     dispatch(initializeBlogs());
@@ -20,7 +21,7 @@ const App = () => {
 
   return (
     <div>
-      <NavigationLink />
+      {loggedUser !== null ? <NavigationLink /> : null}
 
       <Routes>
         <Route path="/" element={<LandingPage />} />

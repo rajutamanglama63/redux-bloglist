@@ -1,21 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 const NavigationLink = () => {
+  const loggedUser = useSelector((state) => state.loggedUser);
   const padding = {
     paddingRight: 5,
   };
   return (
     <div style={{ backgroundColor: "grey" }}>
-      {/* <Link to="/" style={padding}>
-        blogs
-      </Link>
-      <Link to="/" style={padding}>
-        users
-      </Link>
-      <span style={padding}>Raju logged in</span>
-      <button style={padding}>logout</button> */}
-
       <ul
         style={{
           listStyle: "none",
@@ -30,7 +23,7 @@ const NavigationLink = () => {
         <li style={padding}>
           <Link to="/users">users</Link>
         </li>
-        <li style={padding}>Raju logged in</li>
+        <li style={padding}>{loggedUser.name} logged in</li>
         <li>
           <button>logout</button>
         </li>
