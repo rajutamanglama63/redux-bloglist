@@ -1,24 +1,21 @@
-import { useState, useEffect } from 'react'
-import Blog from './components/Blog'
-import blogService from './services/blogs'
+import { useEffect } from "react";
+import Blog from "./components/Blog";
+import { useDispatch } from "react-redux";
+import { initializeBlogs } from "./reducers/blogReducer";
 
 const App = () => {
-  const [blogs, setBlogs] = useState([])
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    blogService.getAll().then(blogs =>
-      setBlogs( blogs )
-    )  
-  }, [])
+    dispatch(initializeBlogs());
+  }, [dispatch]);
 
   return (
     <div>
       <h2>blogs</h2>
-      {blogs.map(blog =>
-        <Blog key={blog.id} blog={blog} />
-      )}
+      <Blog />
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;
