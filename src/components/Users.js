@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 
 const Users = () => {
   const allUsers = useSelector((state) => state.allUser);
-  console.log(allUsers);
+  // console.log(allUsers);
   return (
     <div>
       <h2>Users</h2>

@@ -16,7 +16,7 @@ export const { setAllUsers } = userSlice.actions;
 export const getAllUsers = () => {
   return async (dispatch) => {
     const users = await userServices.allUsers();
-    console.log(users);
+    // console.log(users);
     dispatch(setAllUsers(users));
   };
 };

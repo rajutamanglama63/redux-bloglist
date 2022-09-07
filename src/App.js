@@ -5,6 +5,8 @@ import { initializeBlogs } from "./reducers/blogReducer";
 import Login from "./components/Login";
 import Users from "./components/Users";
 import { getAllUsers } from "./reducers/userReducer";
+import NavigationLink from "./components/NavigationLink";
+import { Route, Routes } from "react-router-dom";
 
 const App = () => {
   const dispatch = useDispatch();
@@ -16,10 +18,13 @@ const App = () => {
 
   return (
     <div>
-      <h2>blogs</h2>
-      <Login />
-      <Users />
-      <Blog />
+      <NavigationLink />
+
+      <Routes>
+        <Route path="/blogs" element={<Blog />} />
+        <Route path="/users" element={<Users />} />
+      </Routes>
+      {/* <Login /> */}
     </div>
   );
 };
