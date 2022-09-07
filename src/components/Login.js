@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
+import { Link } from "react-router-dom";
 import { userLogin } from "../reducers/loginReducer";
 
 const Login = () => {
@@ -41,6 +42,9 @@ const Login = () => {
           />
         </p>
         <button type="submit">login</button>
+        <p>
+          Not registered yet?<Link to="/signup"> signup</Link>
+        </p>
       </form>
     </div>
   );
