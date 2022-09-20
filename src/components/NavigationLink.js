@@ -1,11 +1,17 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
+import { logoutUser } from "../reducers/loginReducer";
 
 const NavigationLink = () => {
   const loggedUser = useSelector((state) => state.loggedUser);
   const padding = {
     paddingRight: 5,
+  };
+
+  const logoutHandler = () => {
+    window.localStorage.removeItem("loggedInUser");
+    console.log("clicked");
   };
   return (
     <div style={{ backgroundColor: "grey" }}>
@@ -25,7 +31,7 @@ const NavigationLink = () => {
         </li>
         <li style={padding}>{loggedUser.name} logged in</li>
         <li>
-          <button>logout</button>
+          <button onClick={logoutHandler}>logout</button>
         </li>
       </ul>
     </div>
