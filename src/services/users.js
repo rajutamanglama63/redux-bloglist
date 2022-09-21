@@ -14,4 +14,9 @@ const allUsers = async () => {
   return response.data;
 };
 
-export default { login, allUsers };
+const individualUser = async (id) => {
+  const response = await axios.get(`${baseUrl}/${id}`);
+  return response.data;
+};
+
+export default { login, allUsers, individualUser };
