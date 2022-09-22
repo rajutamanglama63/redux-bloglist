@@ -1,9 +1,11 @@
 import { useSelector } from "react-redux";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Blog = () => {
   const blogs = useSelector((state) => state.blog);
   const loggedUser = useSelector((state) => state.loggedUser);
+
+  const navigate = useNavigate();
 
   return (
     <div>
@@ -27,6 +29,8 @@ const Blog = () => {
               </div>
             </div>
           ))}
+          <br />
+          <button onClick={() => navigate("/create")}>create</button>
         </>
       )}
     </div>

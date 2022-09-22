@@ -1,11 +1,8 @@
-import React, { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { getAllUsers } from "../reducers/userReducer";
+import React from "react";
+import { useSelector } from "react-redux";
 
 const IndividualUser = () => {
   const individualUser = useSelector((state) => state.individualUser);
-  console.log(individualUser);
-  const dispatch = useDispatch();
 
   return (
     <>

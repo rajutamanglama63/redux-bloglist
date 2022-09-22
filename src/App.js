@@ -10,6 +10,7 @@ import { Route, Routes } from "react-router-dom";
 import LandingPage from "./components/LandingPage";
 import Signup from "./components/Signup";
 import IndividualUser from "./components/IndividualUser";
+import CreateBlog from "./components/CreateBlog";
 
 const App = () => {
   const dispatch = useDispatch();
@@ -27,6 +28,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/blogs" element={<Blog />} />
+        <Route path="/create" element={<CreateBlog />} />
         <Route path="/users" element={<Users />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
