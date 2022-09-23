@@ -11,7 +11,7 @@ const loginSlice = createSlice({
   },
 });
 
-export const { setLoggedUser, logoutUser } = loginSlice.actions;
+export const { setLoggedUser } = loginSlice.actions;
 
 export const userLogin = (username, password) => {
   return async (dispatch) => {
