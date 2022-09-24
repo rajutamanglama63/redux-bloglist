@@ -1,6 +1,7 @@
 const express = require("express");
 const jwt = require("jsonwebtoken");
 const Blog = require("../models/blogSchema");
+const Comment = require("../models/commentSchema");
 const User = require("../models/userSchema");
 const config = require("../utils/config");
 
@@ -123,4 +124,20 @@ blogRouter.delete("/:id", async (req, res) => {
     console.log("not deleted");
   }
 });
+
+blogRouter.post("/:id/comment", async (req, res, next) => {
+  const newComment = new Comment({
+    comment: req.body.comment,
+  });
+
+  const comment = newComment.save();
+
+  res.status(200).json(comment);
+});
+
+blogRouter.get("/:id/comment", async (req, res, next) => {
+  const allComment = await Comment.find({});
+  res.status(200).json(allComment);
+});
+
 module.exports = blogRouter;

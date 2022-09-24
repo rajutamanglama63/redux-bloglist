@@ -22,6 +22,19 @@ const Blog = () => {
     navigate(`/info/${id}`);
   };
 
+  const blogSytle = {
+    paddingTop: 10,
+    paddingBottom: 10,
+    paddingLeft: 2,
+    paddingRight: 2,
+    border: "solid",
+    borderWidth: 3,
+    borderRadius: 20,
+    borderColor: "grey",
+    marginBottom: 5,
+    cursor: "pointer",
+  };
+
   return (
     <div>
       {loggedUser === null ? (
@@ -39,7 +52,10 @@ const Blog = () => {
           <h2>blogs</h2>
           {blogs.map((blog) => (
             <div key={blog.id}>
-              <div onClick={() => blogDetailNavigator(blog.id)}>
+              <div
+                style={blogSytle}
+                onClick={() => blogDetailNavigator(blog.id)}
+              >
                 {blog.title} {blog.author}
               </div>
             </div>
