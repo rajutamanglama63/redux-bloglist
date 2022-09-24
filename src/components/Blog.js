@@ -6,6 +6,7 @@ import { initializeBlogs } from "../reducers/blogReducer";
 
 const Blog = () => {
   const blogs = useSelector((state) => state.blog);
+  // console.log(blogs);
   const loggedUser = useSelector((state) => state.loggedUser);
 
   const navigate = useNavigate();
