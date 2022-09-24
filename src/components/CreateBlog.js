@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import { createNewBlog } from "../reducers/createBlogReducer";
 
 const CreateBlog = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const [newBlog, setNewBlog] = useState({
     title: "",
     author: "",
@@ -13,6 +15,12 @@ const CreateBlog = () => {
   const createBlogHandler = (e) => {
     e.preventDefault();
     dispatch(createNewBlog(newBlog));
+    setNewBlog({
+      title: "",
+      author: "",
+      url: "",
+    });
+    navigate("/blogs");
   };
   return (
     <div>

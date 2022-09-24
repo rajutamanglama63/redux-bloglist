@@ -29,10 +29,16 @@ const App = () => {
         <Route path="/" element={<LandingPage />} />
         <Route path="/blogs" element={<Blog />} />
         <Route path="/create" element={<CreateBlog />} />
-        <Route path="/users" element={<Users />} />
+        <Route
+          path="/users"
+          element={loggedUser !== null ? <Users /> : <Login />}
+        />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
-        <Route path="/individualUser/:id" element={<IndividualUser />} />
+        <Route
+          path="/individualUser/:id"
+          element={loggedUser !== null ? <IndividualUser /> : <Login />}
+        />
       </Routes>
       {/* <Login /> */}
     </div>

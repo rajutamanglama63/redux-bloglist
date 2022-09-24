@@ -1,11 +1,19 @@
-import { useSelector } from "react-redux";
+import { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
+
+import { initializeBlogs } from "../reducers/blogReducer";
 
 const Blog = () => {
   const blogs = useSelector((state) => state.blog);
   const loggedUser = useSelector((state) => state.loggedUser);
 
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(initializeBlogs());
+  }, [dispatch]);
 
   return (
     <div>
