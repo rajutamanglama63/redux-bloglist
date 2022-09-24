@@ -11,6 +11,7 @@ import LandingPage from "./components/LandingPage";
 import Signup from "./components/Signup";
 import IndividualUser from "./components/IndividualUser";
 import CreateBlog from "./components/CreateBlog";
+import BlogDetail from "./components/BlogDetail";
 
 const App = () => {
   const dispatch = useDispatch();
@@ -29,6 +30,11 @@ const App = () => {
         <Route path="/" element={<LandingPage />} />
         <Route path="/blogs" element={<Blog />} />
         <Route path="/create" element={<CreateBlog />} />
+        <Route
+          path="/info/:id"
+          element={loggedUser !== null ? <BlogDetail /> : <Login />}
+        />
+
         <Route
           path="/users"
           element={loggedUser !== null ? <Users /> : <Login />}

@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
+import { getSingleBlog } from "../reducers/blogDetailReducer";
 
 import { initializeBlogs } from "../reducers/blogReducer";
 
@@ -15,6 +16,11 @@ const Blog = () => {
   useEffect(() => {
     dispatch(initializeBlogs());
   }, [dispatch]);
+
+  const blogDetailNavigator = (id) => {
+    dispatch(getSingleBlog(id));
+    navigate(`/info/${id}`);
+  };
 
   return (
     <div>
@@ -33,7 +39,7 @@ const Blog = () => {
           <h2>blogs</h2>
           {blogs.map((blog) => (
             <div key={blog.id}>
-              <div>
+              <div onClick={() => blogDetailNavigator(blog.id)}>
                 {blog.title} {blog.author}
               </div>
             </div>

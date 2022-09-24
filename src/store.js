@@ -1,4 +1,5 @@
 import { configureStore } from "@reduxjs/toolkit";
+import blogDetailReducer from "./reducers/blogDetailReducer";
 import blogReducer from "./reducers/blogReducer";
 import createBlogReducer from "./reducers/createBlogReducer";
 import individualUserReducer from "./reducers/individualUserReducer";
@@ -12,6 +13,7 @@ const store = configureStore({
     allUser: userReducer,
     individualUser: individualUserReducer,
     createBlog: createBlogReducer,
+    blogDetail: blogDetailReducer,
   },
 });
 

@@ -1,13 +1,21 @@
 import React from "react";
+import { useSelector } from "react-redux";
 
 const BlogDetail = () => {
+  const BlogInfo = useSelector((state) => state.blogDetail);
   return (
-    <div>
-      <h2>Title</h2>
-      <p>url</p>
-      <p>like</p>
-      <p>added by Raju</p>
-    </div>
+    <>
+      {BlogInfo ? (
+        <div>
+          <h2>{BlogInfo.title}</h2>
+          <p>{BlogInfo.url}</p>
+          <p>likes: {BlogInfo.likes}</p>
+          <p>added by {BlogInfo.author}</p>
+        </div>
+      ) : (
+        <>Loading..</>
+      )}
+    </>
   );
 };
 

@@ -16,7 +16,7 @@ export const { setIndividualUser } = individualUserSlice.actions;
 export const getIndividualUser = (id) => {
   return async (dispatch) => {
     const user = await userServices.individualUser(id);
-    console.log(user);
+    // console.log(user);
     dispatch(setIndividualUser(user));
   };
 };
