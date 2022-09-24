@@ -39,6 +39,10 @@ Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkByY
 ###
 GET http://localhost:5000/api/blogs/
 
+###
+GET http://localhost:5000/api/blogs/632f03f21aae08ee6aef278f
+
+
 
 ###
 PUT http://localhost:5000/api/blogs/63176888fdc1963f9ac3b3cd

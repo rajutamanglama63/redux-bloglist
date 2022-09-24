@@ -19,6 +19,15 @@ blogRouter.get("/", async (req, res, next) => {
   }
 });
 
+blogRouter.get("/:id", async (req, res, next) => {
+  try {
+    const blog = await Blog.findById(req.params.id);
+    res.status(200).json(blog);
+  } catch (error) {
+    next();
+  }
+});
+
 blogRouter.post("/", async (req, res, next) => {
   try {
     if (req.body.likes === undefined) {
