@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { createNewBlog } from "../reducers/createBlogReducer";
+import { createNewBlog } from "../reducers/blogReducer";
 
 const CreateBlog = () => {
   const dispatch = useDispatch();

@@ -1,17 +1,19 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { useSelector } from "react-redux";
-import { logoutUser } from "../reducers/loginReducer";
+import { useDispatch, useSelector } from "react-redux";
+import { userLogout } from "../reducers/loginReducer";
 
 const NavigationLink = () => {
   const loggedUser = useSelector((state) => state.loggedUser);
+  const dispatch = useDispatch();
   const padding = {
     paddingRight: 5,
   };
 
   const logoutHandler = () => {
     window.localStorage.removeItem("loggedInUser");
-    console.log("clicked");
+    dispatch(userLogout());
+    // console.log("clicked");
   };
   return (
     <div style={{ backgroundColor: "grey" }}>
