@@ -9,13 +9,15 @@ commentRouter.post("/:id", async (req, res, next) => {
     blogId: req.params.id,
   });
 
-  const comment = newComment.save();
+  console.log(newComment);
+
+  const comment = await newComment.save();
 
   res.status(200).json(comment);
 });
 
 commentRouter.get("/:id", async (req, res, next) => {
-  const allComment = await Comment.find({});
+  const allComment = await Comment.find({ blogId: req.params.id });
   res.status(200).json(allComment);
 });
 

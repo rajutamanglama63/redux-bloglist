@@ -59,13 +59,12 @@ Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkBkZ
 GET http://localhost:5000/api/users/631630c148ea70de74e41a69
 
 ###
-POST http://localhost:5000/api/comments/631631e828e2b2ca3ff89dc7
-
+POST http://localhost:5000/api/comments/63176849fdc1963f9ac3b3c9
 Content-Type: application/json
 
 {
-    "comment": "This is comment1",
+    "comment": "This is comment3"
 }
 
 ###
-GET http://localhost:5000/api/blogs/631631e828e2b2ca3ff89dc7
+GET http://localhost:5000/api/comments/632c85bf23b068106bc26d66
