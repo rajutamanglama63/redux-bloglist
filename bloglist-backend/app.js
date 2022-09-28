@@ -4,6 +4,7 @@ const config = require("./utils/config");
 const middleware = require("./utils/middleware");
 const userRouter = require("./controllers/users");
 const blogRouter = require("./controllers/blogs");
+const commentRouter = require("./controllers/comments");
 
 const app = express();
 
@@ -22,6 +23,7 @@ app.use(middleware.userExtractor);
 
 app.use("/api/users", userRouter);
 app.use("/api/blogs", blogRouter);
+app.use("/api/comments", commentRouter);
 
 // these two middleware runs after all routes gets executed --
 // And then it will handle whatever task it is assign like handling err if it occur.
