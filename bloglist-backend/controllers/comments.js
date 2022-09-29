@@ -1,4 +1,5 @@
 const express = require("express");
+const Blog = require("../models/blogSchema");
 const Comment = require("../models/commentSchema");
 
 const commentRouter = express.Router();

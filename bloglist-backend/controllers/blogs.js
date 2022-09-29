@@ -9,7 +9,7 @@ const blogRouter = express.Router();
 
 blogRouter.get("/", async (req, res, next) => {
   try {
-    const allBlogs = await Blog.find({}).populate("user", {
+    const allBlogs = await Blog.find({}).populate("comments", "user", {
       username: 1,
       name: 1,
     });
@@ -22,7 +22,7 @@ blogRouter.get("/", async (req, res, next) => {
 
 blogRouter.get("/:id", async (req, res, next) => {
   try {
-    const blog = await Blog.findById(req.params.id);
+    const blog = await Blog.findById(req.params.id).populate("comments");
     res.status(200).json(blog);
   } catch (error) {
     next();

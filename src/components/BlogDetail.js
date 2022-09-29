@@ -1,5 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
+import Comment from "./Comment";
 
 const BlogDetail = () => {
   const BlogInfo = useSelector((state) => state.blogDetail);
@@ -15,6 +16,8 @@ const BlogDetail = () => {
       ) : (
         <>Loading..</>
       )}
+
+      <Comment id={BlogInfo.id} />
     </>
   );
 };

@@ -2,8 +2,8 @@ POST http://localhost:5000/api/users/signup
 content-type: application/json
 
 {
-    "name": "Randak",
-    "username": "@randak",
+    "name": "Chacha",
+    "username": "@chacha",
     "password": "1234"
 }
 
@@ -12,7 +12,7 @@ POST http://localhost:5000/api/users/login
 Content-Type: application/json
 
 {
-    "username": "@tony",
+    "username": "@chacha",
     "password": "1234"
 }
 
@@ -22,12 +22,12 @@ GET http://localhost:5000/api/users/
 ###
 POST http://localhost:5000/api/blogs/
 Content-Type: application/json
-Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkByYW5kYWsiLCJpZCI6IjYzMTYzOWU3NTc2NjQ3YWVhYTkxNzQ1OCIsImlhdCI6MTY2MjQ3ODUwNywiZXhwIjoxNjYyNDgyMTA3fQ.Ic57bmXy65zlLwQC_Cg67xPE6CG-Ak4B4ut8a4Xv21E
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkBjaGFjaGEiLCJpZCI6IjYzMzQ3ZGU5YTVmMjFlYjhjZDYwNDM3YiIsImlhdCI6MTY2NDM4NDUzMywiZXhwIjoxNjY0Mzg4MTMzfQ.OAKNls6AR4wLvm0k6VIOJ41X9NyzwcUKYxgfAwZXfAM
 
 {
-    "title": "Electroxsdgneering",
-    "url": "electronixghdcs.com",
-    "author": "Randak"
+    "title": "Teleport",
+    "url": "teleport.com",
+    "author": "Chacha"
 }
 
 ###
@@ -40,7 +40,7 @@ Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkByY
 GET http://localhost:5000/api/blogs/
 
 ###
-GET http://localhost:5000/api/blogs/632f03f21aae08ee6aef278f
+GET http://localhost:5000/api/blogs/63347f63f0aea728b43d21ab
 
 
 
@@ -59,12 +59,12 @@ Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkBkZ
 GET http://localhost:5000/api/users/631630c148ea70de74e41a69
 
 ###
-POST http://localhost:5000/api/comments/63176849fdc1963f9ac3b3c9
+POST http://localhost:5000/api/comments/63347f63f0aea728b43d21ab
 Content-Type: application/json
 
 {
-    "comment": "This is comment3"
+    "comment": "This is comment for teleport blog"
 }
 
 ###
-GET http://localhost:5000/api/comments/632c85bf23b068106bc26d66
+GET http://localhost:5000/api/comments/63347f63f0aea728b43d21ab
