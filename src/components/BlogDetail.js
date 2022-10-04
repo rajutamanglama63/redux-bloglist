@@ -4,9 +4,10 @@ import Comment from "./Comment";
 
 const BlogDetail = () => {
   const BlogInfo = useSelector((state) => state.blogDetail);
+  console.log(BlogInfo.id);
   return (
     <>
-      {BlogInfo ? (
+      {BlogInfo !== null ? (
         <div>
           <h2>{BlogInfo.title}</h2>
           <p>{BlogInfo.url}</p>

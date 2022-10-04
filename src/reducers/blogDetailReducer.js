@@ -16,6 +16,7 @@ export const { setBlogDetail } = blogDetailSlice.actions;
 export const getSingleBlog = (id) => {
   return async (dispatch) => {
     const singleBlog = await blogServices.getBlogDetail(id);
+    console.log(singleBlog);
     dispatch(setBlogDetail(singleBlog));
   };
 };
