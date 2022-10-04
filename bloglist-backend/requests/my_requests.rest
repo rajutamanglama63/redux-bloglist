@@ -63,7 +63,7 @@ POST http://localhost:5000/api/comments/63347f63f0aea728b43d21ab
 Content-Type: application/json
 
 {
-    "comment": "This is comment for teleport blog"
+    "comment": "This is 2nd comment for teleport blog"
 }
 
 ###
