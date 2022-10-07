@@ -17,9 +17,10 @@ const commentSlice = createSlice({
 
 export const { setNewComment, getComments } = commentSlice.actions;
 
-export const createNewComment = (newCommentData) => {
+export const createNewComment = (newCommentData, id) => {
   return async (dispatch) => {
-    const data = await commentServices.createBlog(newCommentData);
+    const data = await commentServices.postComment(newCommentData, id);
+    console.log(data);
     dispatch(setNewComment(data));
   };
 };

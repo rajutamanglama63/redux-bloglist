@@ -4,19 +4,30 @@ import Comment from "./Comment";
 
 const BlogDetail = () => {
   const BlogInfo = useSelector((state) => state.blogDetail);
-  console.log(BlogInfo.id);
+  console.log(BlogInfo);
+
+  if (!BlogInfo) {
+    return null;
+  }
   return (
     <>
-      {BlogInfo !== null ? (
+      {/* {!BlogInfo ? (
+        <>Loading..</>
+      ) : (
         <div>
           <h2>{BlogInfo.title}</h2>
           <p>{BlogInfo.url}</p>
           <p>likes: {BlogInfo.likes}</p>
           <p>added by {BlogInfo.author}</p>
         </div>
-      ) : (
-        <>Loading..</>
-      )}
+      )} */}
+
+      <div>
+        <h2>{BlogInfo.title}</h2>
+        <p>{BlogInfo.url}</p>
+        <p>likes: {BlogInfo.likes}</p>
+        <p>added by {BlogInfo.author}</p>
+      </div>
 
       <Comment id={BlogInfo.id} />
     </>

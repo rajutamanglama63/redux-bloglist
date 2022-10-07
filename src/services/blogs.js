@@ -6,10 +6,12 @@ const getAll = () => {
   return request.then((response) => response.data);
 };
 
-const getBlogDetail = (id) => {
-  const request = axios.get(`${baseUrl}/${id}`);
+const getBlogDetail = async (id) => {
+  const request = await axios.get(`${baseUrl}/${id}`);
+  console.log(request);
 
-  return request.then((response) => response.data);
+  // return request.then((response) => response.data);
+  return request.data;
 };
 
 const createBlog = async (newBlog) => {
